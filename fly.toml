@@ -1,0 +1,17 @@
+# fly.toml app configuration file generated for fly-guard on 2023-05-30T01:56:17+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "fly-guard"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+  [build.args]
+    TSVERSION="1.42.0"
+
+[mount]
+  source = "adguard"
+  destination = "/opt/adguardhome/conf"
